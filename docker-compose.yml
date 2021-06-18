@@ -1,0 +1,7 @@
+services: 
+    app:
+        image: golang:1.16-alpine3.12
+        volumes: 
+            - .:/go/src/gin-app
+        working_dir: /go/src/gin-app
+        command: sleep 7200

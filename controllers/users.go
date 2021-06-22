@@ -34,3 +34,7 @@ func DeleteUser(c *gin.Context) {
 	err := models.DeleteUser(id)
 	c.JSON(http.StatusOK, err)
 }
+
+func Hello(c *gin.Context) {
+	c.JSON(http.StatusOK, "Hello World")
+}

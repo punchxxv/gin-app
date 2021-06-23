@@ -8,5 +8,5 @@ func main() {
 
 	r := routes.SetupRouter()
 
-	r.Run()
+	r.Run(":3000")
 }

@@ -8,22 +8,20 @@ import (
 
 type Users struct {
 	ID        int
-	Username  string
-	Password  string
 	FirstName string
 	LastName  string
 }
 
 func GetAllUsers() []Users {
 	var user []Users
-	config.DB.Raw("select id, username, password, first_name, last_name from users").Scan(&user)
+	config.DB.Raw("select id, first_name, last_name from users").Scan(&user)
 
 	return user
 }
 
 func GetUserById(id string) Users {
 	var user Users
-	config.DB.Raw("select id, username, password, first_name, last_name from users where id = ?", id).First(&user)
+	config.DB.Raw("select id, first_name, last_name from users where id = ?", id).First(&user)
 
 	return user
 }

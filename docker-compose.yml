@@ -3,5 +3,7 @@ services:
         image: golang:1.16-alpine3.12
         volumes: 
             - .:/go/src/gin-app
+        ports: 
+            - "3000:3000"
         working_dir: /go/src/gin-app
         command: sleep 7200
